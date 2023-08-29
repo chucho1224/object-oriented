@@ -34,34 +34,34 @@ class Triangle(Figure):
     def calculate_area(self):
         return 0.5 * self.base * self.height
 
-figure = input("Enter the name of the figure (square, rectangle, circle, triangle): ").lower()
-
 while True:
+    figure = input("Enter the name of the figure (square, rectangle, circle, triangle), or type 'exit' to quit: ").lower()
+
+    if figure == "exit":
+        print("Exiting the program.")
+        break
+
     if figure == "square":
         side_length = float(input("Enter the side length of the square: "))
         square = Square(side_length)
         area = square.calculate_area()
         print(f"The area of the square is {area}")
-        break
     elif figure == "rectangle":
         length = float(input("Enter the length of the rectangle: "))
         width = float(input("Enter the width of the rectangle: "))
         rectangle = Rectangle(length, width)
         area = rectangle.calculate_area()
         print(f"The area of the rectangle is {area}")
-        break
     elif figure == "circle":
         radius = float(input("Enter the radius of the circle: "))
         circle = Circle(radius)
         area = circle.calculate_area()
         print(f"The area of the circle is {area}")
-        break
     elif figure == "triangle":
         base = float(input("Enter the base length of the triangle: "))
         height = float(input("Enter the height of the triangle: "))
         triangle = Triangle(base, height)
         area = triangle.calculate_area()
         print(f"The area of the triangle is {area}")
-        break
     else:
-        print("Invalid figure entered. Please enter 'square', 'rectangle', 'circle', or 'triangle'.")
+        print("Invalid figure. Please enter 'square', 'rectangle', 'circle', 'triangle', or 'exit'.")
